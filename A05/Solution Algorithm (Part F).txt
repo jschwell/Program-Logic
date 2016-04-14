@@ -1,0 +1,145 @@
+Joleen Schwellenbach
+ASSIGNMENT 5F
+
+Problem Statement
+        
+Design and write Java program that will prompt the end-user for the price of an article and a pricing code. 
+Your program then calculates a discount rate according to the pricing code and output to the page the original price of the article,
+the discount amount and the new discounted price. Calculate the pricing code and accompanying discount amount as follows:
+
+Pricing Code	Discount Rate
+H				50%
+F				40%
+T				30%
+Q				20%
+Z				0%
+
+
+Step 1. Nouns and Verbs. Identify the nouns and verbs in the problem statement and list them below
+               
+
+	Nouns: price of an article, pricing code, discount rate/amount, discounted price
+
+	Verbs: prompt, calculates, output
+
+
+
+
+Step 2. Defining Diagram. Convert the relevant nouns into variable names and the relevant verbs into processes.
+          Write down the processes using short statements.
+        
+
+	INPUTS:
+		articlePrice
+		pricingCode
+  
+
+	PROCESSING:
+		prompt the user for the price of an article
+		prompt the user for the pricing code
+		calculate the discount amount
+		calculate the discounted price
+		display the article price, the discount amount, and the new discounted price
+  
+
+	OUTPUTS:
+		articlePrice
+		discountAmount
+		totalPrice
+
+
+Step 3. Solution Algorithm. Create a solution algorithm. Separate out you pseudocode into methods, the steps inside each
+	method should be sentence style pseudocode based on the defining diagram. Include valid Java variable data types and
+	names that conform to our WITC Software Development Standards.
+
+calcDiscount(){
+	declare and initialize double articlePrice
+	declare and initialize String pricingCode
+	declare and initialize double discountAmount
+	declare and initialize double totalPrice
+	declare and initialize String message
+
+	set message = "Enter the price of the article."
+	set articlePrice = stringToReal(getUserInput(message))
+
+	set message = "Enter the pricing code."
+	set pricingCode = getUserInput(message)
+
+	CASE OF pricingCode
+		H: discountAmount = articlePrice * 0.5
+		F: discountAmount = articlePrice * 0.4
+		T: discountAmount = articlePrice * 0.3
+		Q: discountAmount = articlePrice * 0.2
+		Z: discountAmount = 0
+	ENDCASE
+
+	set totalPrice = articlePrice - discountAmount
+
+	message = "Original Price: $" + articlePrice
+	call displayResults(message);
+	message = "Discount Amount: $" + discountAmount
+	call displayResults(message);
+	message = "Discounted Price: $" + totalPrice
+	call displayResults(message);
+}
+
+String getUserInput(String message){
+	declare and initialize String userInput
+
+	declare and instantiate Scanner object
+
+	prompt end-user with message and
+	set input into the variable userInput
+
+	return userInput;
+}
+
+displayResults(String message){
+	display message
+}
+
+
+Step 4. Checking the Solution Algorithm. Create a test plan for the algorithm.
+	Remember to fill in the VARIABLES section! That's easy to miss!
+        Have 2-3 test cases that test different inputs and outputs.  
+          
+
+	VARIABLES: articlePrice, pricingCode, discountAmount, totalPrice
+
+	TEST CASE 1:
+
+  		INPUT VALUES: 15.00, t
+
+  		EXPECTED RESULT: 15.00, 4.50, 10.50
+    
+  		ACTUAL RESULT: 15.00, 4.50, 10.50
+
+	TEST CASE 2:
+
+  		INPUT VALUES: 2.50, H
+
+  		EXPECTED RESULT: 2.50, 1.25, 1.25
+    
+  		ACTUAL RESULT: 2.50, 1.25, 1.25
+    
+	TEST CASE 3:
+
+  		INPUT VALUES: 14.00, Z
+
+  		EXPECTED RESULT: "No Discount.", 14.00, 0 ,14.00
+    
+  		ACTUAL RESULT: "No Discount.", 14.00, 0.00, 14.00
+
+
+Step 5. Java Code. Using NetBeans, create the Java code based on your algorithm solution. 
+	You will need to follow our WITC Software Development Standards.
+	DO NOT PASTE YOUR CODE HERE. Turn in the project file from NetBeans.
+  	Make sure you comment your code.
+        
+        
+        
+
+Step 6. Test Plan Revisited. Once everything is working, go back and fill in the actual results 
+sections in the test plan. If you did not get your program to run, then your actual results should
+reflect that. Better yet, contact me for help.
+			

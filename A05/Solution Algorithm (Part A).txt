@@ -1,0 +1,124 @@
+Joleen Schwellenbach
+ASSIGNMENT 5A
+
+Problem Statement
+        
+A program is required that asks an end-user to enter a number greater than 10.
+If the number is not greater than 10, then display a message to the end-user stating they did not enter a number greater than 10.
+If the number is greater than 10, then display a message to the end-user. The message must include the number the end-user entered.    	
+          
+
+Step 1. Nouns and Verbs. Identify the nouns and verbs in the problem statement and list them below
+               
+
+	Nouns: number, 10 
+
+	Verbs: ask, [compare], display
+
+
+Step 2. Defining Diagram. Convert the relevant nouns into variable names and the relevant verbs into processes.
+          Write down the processes using short statements.
+        
+
+	INPUTS:
+		userNumber
+		ten
+  
+
+	PROCESSING:
+		get a number from user
+		convert input to a number
+		compare input to ten
+		display message if number is not greater than ten
+		display message if number is greater than ten
+  
+
+	OUTPUTS:
+		message
+		number
+  
+
+
+Step 3. Solution Algorithm. Create a solution algorithm. Separate out you pseudocode into methods, the steps inside each
+	method should be sentence style pseudocode based on the defining diagram. Include valid Java variable data types and
+	names that conform to our WITC Software Development Standards.
+
+greaterThanTen(){
+	declare and initialize double userNumber
+	declare and initialize String message
+
+	set message = Please enter a number greater than 10.
+	set userNumber = stringToReal(getUserInput(message))  //Doing this so I can reuse getUserInput()
+
+	IF(userNumber > 10){
+		set message = userNumber + " is greater than 10."
+		call displayResults(message);
+	}
+
+	IF(userNumber <= 10){
+		set message = "Sorry, " + userNumber + " is not greater than 10."
+		call displayResults(message);
+	}
+
+}
+
+String getUserInput(String message){
+	declare and initialize String userInput
+
+	declare and instantiate Scanner object
+
+	prompt end-user with message and
+	set input into the variable userInput
+
+	return userInput;
+}
+
+displayResults(String message){
+	display message
+}
+
+
+Step 4. Checking the Solution Algorithm. Create a test plan for the algorithm.
+	Remember to fill in the VARIABLES section! That's easy to miss!
+        Have 2-3 test cases that test different inputs and outputs.  
+          
+
+	VARIABLES: userNumber, message
+
+	TEST CASE 1:
+
+  		INPUT VALUES: 10
+
+  		EXPECTED RESULT: Sorry, 10 is not greater than 10.
+    
+  		ACTUAL RESULT: Sorry, 10.0 is not greater than 10.
+
+	TEST CASE 2:
+
+  		INPUT VALUES: 5
+
+  		EXPECTED RESULT: Sorry, 5 is not greater than 10.
+    
+  		ACTUAL RESULT: Sorry, 5.0 is not greater than 10.
+    
+	TEST CASE 3:
+
+  		INPUT VALUES: 15
+
+  		EXPECTED RESULT: 15 is greater than 10.
+    
+  		ACTUAL RESULT: 15.0 is greater than 10.
+
+
+Step 5. Java Code. Using NetBeans, create the Java code based on your algorithm solution. 
+	You will need to follow our WITC Software Development Standards.
+	DO NOT PASTE YOUR CODE HERE. Turn in the project file from NetBeans.
+  	Make sure you comment your code.
+        
+        
+        
+
+Step 6. Test Plan Revisited. Once everything is working, go back and fill in the actual results 
+sections in the test plan. If you did not get your program to run, then your actual results should
+reflect that. Better yet, contact me for help.
+			

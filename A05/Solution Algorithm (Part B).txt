@@ -1,0 +1,119 @@
+Joleen Schwellenbach
+ASSIGNMENT 5B
+
+Problem Statement
+        
+Design and write a Java program that asks the end-user if today is their birthday.
+If the answer is yes, display Happy Birthday. If the answer is not yes, display Make it a Great Day.     	
+          
+
+Step 1. Nouns and Verbs. Identify the nouns and verbs in the problem statement and list them below
+               
+
+	Nouns: answer, yes
+
+	Verbs: asks, [compare], display
+
+
+
+
+Step 2. Defining Diagram. Convert the relevant nouns into variable names and the relevant verbs into processes.
+          Write down the processes using short statements.
+        
+
+	INPUTS:
+		answer
+		yes
+  
+
+	PROCESSING:
+		ask if it's the user's birthday
+		compare input to yes
+		display message "happy birthday" if answer is yes
+		else display message "make it a great day"
+  
+
+	OUTPUTS:
+		message
+
+
+Step 3. Solution Algorithm. Create a solution algorithm. Separate out you pseudocode into methods, the steps inside each
+	method should be sentence style pseudocode based on the defining diagram. Include valid Java variable data types and
+	names that conform to our WITC Software Development Standards.
+
+checkBirthday(){
+	declare and initialize String answer
+	declare and initialize String message
+
+	set message = "Is today your birthday?"
+	set answer = getUserInput(message)
+
+	IF(answer is equal to yes){
+		set message = "Happy Birthday!"
+		call displayResults(message);
+	ELSE
+		set message = "Make it a Great Day!"
+		call displayResults(message);
+	}
+}
+
+String getUserInput(String message){
+	declare and initialize String userInput
+
+	declare and instantiate Scanner object
+
+	prompt end-user with message and
+	set input into the variable userInput
+
+	return userInput;
+}
+
+displayResults(String message){
+	display message
+}
+
+
+Step 4. Checking the Solution Algorithm. Create a test plan for the algorithm.
+	Remember to fill in the VARIABLES section! That's easy to miss!
+        Have 2-3 test cases that test different inputs and outputs.  
+          
+
+	VARIABLES: answer, message
+
+	TEST CASE 1:
+
+  		INPUT VALUES: Yes
+
+  		EXPECTED RESULT: Happy Birthday!
+    
+  		ACTUAL RESULT: Happy Birthday!
+
+	TEST CASE 2:
+
+  		INPUT VALUES: No
+
+  		EXPECTED RESULT: Make it a Great Day!
+    
+  		ACTUAL RESULT: Make it a Great Day!
+    
+	TEST CASE 3:
+
+  		INPUT VALUES: YES
+
+  		EXPECTED RESULT: Happy Birthday!
+    
+  		ACTUAL RESULT: Happy Birthday!
+
+
+Step 5. Java Code. Using NetBeans, create the Java code based on your algorithm solution. 
+	You will need to follow our WITC Software Development Standards.
+	DO NOT PASTE YOUR CODE HERE. Turn in the project file from NetBeans.
+  	Make sure you comment your code.
+        
+        
+        
+
+Step 6. Test Plan Revisited. Once everything is working, go back and fill in the actual results 
+sections in the test plan. If you did not get your program to run, then your actual results should
+reflect that. Better yet, contact me for help.
+			

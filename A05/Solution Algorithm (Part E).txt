@@ -1,0 +1,156 @@
+Joleen Schwellenbach
+ASSIGNMENT 5E
+
+Problem Statement
+        
+Design and write a Java program that uses nested if statements. 
+Ask the user how many kids were in their family when growing up and how many bedrooms there were in the house. 
+For the sake of simplicity let's only code for 1, 2, or 3 or more kids, and 1, 2, 3 or more bedrooms. 
+Look at the following chart and output a message for every combination of kids and bedrooms.
+
+Step 1. Nouns and Verbs. Identify the nouns and verbs in the problem statement and list them below
+               
+
+	Nouns: kids, bedrooms, message
+
+	Verbs: ask, output
+
+
+Step 2. Defining Diagram. Convert the relevant nouns into variable names and the relevant verbs into processes.
+          Write down the processes using short statements.
+        
+
+	INPUTS:
+		numberOfKids
+		numberOfBedrooms
+  
+
+	PROCESSING:
+		prompt the user for number of kids
+		prompt the user for number of bedrooms
+		display message based on combination
+  
+
+	OUTPUTS:
+		message
+
+
+Step 3. Solution Algorithm. Create a solution algorithm. Separate out you pseudocode into methods, the steps inside each
+	method should be sentence style pseudocode based on the defining diagram. Include valid Java variable data types and
+	names that conform to our WITC Software Development Standards.
+
+getFamilyInfo(){
+	declare and initialize int numberOfKids
+	declare and initialize int numberOfBedrooms
+	declare and initialize String message
+
+	set message = "How many kids were in your family when growing up, yourself included?"
+	set numberOfKids = stringToInteger(getUserInput(message));
+
+	IF(numberOfKids >= 1){
+		set message = "How many bedrooms were in the house?"
+		set numberOfBedrooms = stringToInteger(getUserInput(message));
+
+		IF(numberOfBedrooms >= 1){
+			IF(numberOfKids == 1) {
+				IF(numberOfBedrooms == 1){
+					message = "With " + numberOfKids + " kid and " + numberOfBedrooms + " bedroom you must feel lucky!"
+					call displayResults(message);
+				ELSE IF(numberOfBedrooms == 2) THEN
+					message = "With " + numberOfKids + " kid and " + numberOfBedrooms + " bedrooms it must be spacious!"
+					call displayResults(message);
+				ELSE
+					message = "With " + numberOfKids + " kid and " + numberOfBedrooms + " bedrooms you must have an empty feeling!"
+					call displayResults(message);
+				}
+            ELSE IF(numberOfKids == 2) THEN
+				IF(numberOfBedrooms == 1){
+					message = "With " + numberOfKids + " kids and " + numberOfBedrooms + " bedroom you must be cozy!"
+					call displayResults(message);
+				ELSE IF(numberOfBedrooms == 2) THEN
+					message = "With " + numberOfKids + " kids and " + numberOfBedrooms + " bedrooms you must feel lucky!"
+					call displayResults(message);
+				ELSE
+					message = "With " + numberOfKids + " kids and " + numberOfBedrooms + " bedrooms it must be spacious!"
+					call displayResults(message);
+				}
+            ELSE
+				IF(numberOfBedrooms == 1){
+					message = "With " + numberOfKids + " kids and " + numberOfBedrooms + " bedroom you must be crowded!"
+					call displayResults(message);
+				ELSE IF(numberOfBedrooms == 2) THEN
+					message = "With " + numberOfKids + " kids and " + numberOfBedrooms + " bedrooms you must be cozy!"
+					call displayResults(message);
+				ELSE
+					message = "With " + numberOfKids + " kids and " + numberOfBedrooms + " bedrooms you must feel lucky!"
+					call displayResults(message);
+				}
+            }
+		ELSE
+			notify the user to enter a number of 1 or greater
+		}
+	ELSE
+		notify the user to enter a number of 1 or greater
+	}
+}
+
+String getUserInput(String message){
+	declare and initialize String userInput
+
+	declare and instantiate Scanner object
+
+	prompt end-user with message and
+	set input into the variable userInput
+
+	return userInput;
+}
+
+displayResults(String message){
+	display message
+}
+
+
+Step 4. Checking the Solution Algorithm. Create a test plan for the algorithm.
+	Remember to fill in the VARIABLES section! That's easy to miss!
+        Have 2-3 test cases that test different inputs and outputs.  
+          
+
+	VARIABLES: numberOfKids, numberOfBedrooms, message
+
+	TEST CASE 1: 
+
+  		INPUT VALUES: 0, 1
+
+  		EXPECTED RESULT: Please enter a number of 1 or greater.
+    
+  		ACTUAL RESULT: Please enter a number of 1 or greater.
+
+	TEST CASE 2:
+
+  		INPUT VALUES: 2, 3
+
+  		EXPECTED RESULT: With 2 kids and 3 bedrooms it must be spacious!
+    
+  		ACTUAL RESULT: With 2 kids and 3 bedrooms it must be spacious!
+    
+	TEST CASE 3:
+
+  		INPUT VALUES: 5, 2
+
+  		EXPECTED RESULT: With 5 kids and 2 bedrooms you must be cozy!
+    
+  		ACTUAL RESULT: With 5 kids and 2 bedrooms you must be cozy!
+
+
+Step 5. Java Code. Using NetBeans, create the Java code based on your algorithm solution. 
+	You will need to follow our WITC Software Development Standards.
+	DO NOT PASTE YOUR CODE HERE. Turn in the project file from NetBeans.
+  	Make sure you comment your code.
+        
+        
+        
+
+Step 6. Test Plan Revisited. Once everything is working, go back and fill in the actual results 
+sections in the test plan. If you did not get your program to run, then your actual results should
+reflect that. Better yet, contact me for help.
+			
