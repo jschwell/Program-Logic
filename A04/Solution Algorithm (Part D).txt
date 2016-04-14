@@ -1,0 +1,131 @@
+Joleen Schwellenbach
+Assignment 4D
+
+Problem Statement
+        
+Design and write program that asks the end-user to enter three test scores.
+Create a function called calcAverage that accepts three test scores as arguments and returns the average of the scores.   	
+          
+
+Step 1. Nouns and Verbs. Identify the nouns and verbs in the problem statement and list them below
+               
+
+	Nouns: three test scores,  average
+
+	Verbs:  asks, accepts, returns
+
+
+
+
+Step 2. Defining Diagram. Convert the relevant nouns into variable names and the relevant verbs into processes.
+          Write down the processes using short statements.
+        
+
+	INPUTS:
+		testScore1
+		testScore2
+		testScore3
+  
+
+	PROCESSING:
+		ask end-user for the first test score and save the input to the variable testScore1
+		ask end-user for the second test score and save the input to the variable testScore2
+		ask end-user for the third test score and save the input to the variable testScore3
+		send the test scores to the function calcAverage to calculate the average
+		return the average
+
+
+	OUTPUTS:
+		average
+  
+
+
+Step 3. Solution Algorithm. Create a solution algorithm. Separate out you pseudocode into methods, the steps inside each
+	method should be sentence style pseudocode based on the defining diagram. Include valid Java variable data types and
+	names that conform to our WITC Software Development Standards.
+
+getScoreAverage(){
+	declare and initialize double testScore1
+	declare and initialize double testScore2
+	declare and initialize double testScore3
+	declare and initialize double average
+
+	set testScore1 = getUserInput();
+	set testScore2 = getUserInput();
+	set testScore3 = getUserInput();
+
+	set average = calcAverage(testScore1, testScore2, testScore3);
+
+	displayResults(testScore1, testScore2, testScore3, average);	
+}
+
+double getUserInput(){
+	declare and initialize double testScore
+
+	declare and instantiate Scanner object
+
+	prompt end-user for a test score and
+	set input into the variable testScore
+
+	return testScore;
+}
+
+double calcAverage(double num1, double num2, double num3){
+	declare and initialize double average
+	set average = (num1 + num2 + num 3) / 3
+
+	return average;
+}
+
+displayResults(double num1, double num2, double num3, double average){
+	display "Test score #1:" + " " + num1
+	display "Test score #2:" + " " + num2
+	display "Test score #3:" + " " + num3
+
+	display "The average is:" + " " + average
+}
+
+Step 4. Checking the Solution Algorithm. Create a test plan for the algorithm.
+	Remember to fill in the VARIABLES section! That's easy to miss!
+        Have 2-3 test cases that test different inputs and outputs.  
+          
+
+	VARIABLES: 
+
+	TEST CASE 1:
+
+  		INPUT VALUES: 82, 87, 90
+
+  		EXPECTED RESULT: 86.33
+    
+  		ACTUAL RESULT: 86.33333333333333
+
+	TEST CASE 2:
+
+  		INPUT VALUES: 70, 75, 80
+
+  		EXPECTED RESULT: 75
+    
+  		ACTUAL RESULT: 75.0
+    
+	TEST CASE 3:
+
+  		INPUT VALUES: 92, 94, 98
+
+  		EXPECTED RESULT: 94.67
+    
+  		ACTUAL RESULT: 94.66666666666667
+
+
+Step 5. Java Code. Using NetBeans, create the Java code based on your algorithm solution. 
+	You will need to follow our WITC Software Development Standards.
+	DO NOT PASTE YOUR CODE HERE. Turn in the project file from NetBeans.
+  	Make sure you comment your code.
+        
+        
+        
+
+Step 6. Test Plan Revisited. Once everything is working, go back and fill in the actual results 
+sections in the test plan. If you did not get your program to run, then your actual results should
+reflect that. Better yet, contact me for help.
+			

@@ -1,0 +1,110 @@
+Joleen Schwellenbach
+Assignment 4B
+
+Problem Statement
+        
+Design and write a Java program that gets an integer value from the end-user and send the value to a module called timesTen. 
+This module should multiply the value by ten and display the result.     	
+          
+
+Step 1. Nouns and Verbs. Identify the nouns and verbs in the problem statement and list them below
+               
+
+	Nouns: integer value, result 
+
+	Verbs:  get, send, multiply, display
+
+
+
+
+Step 2. Defining Diagram. Convert the relevant nouns into variable names and the relevant verbs into processes.
+          Write down the processes using short statements.
+        
+
+	INPUTS:
+		myValue
+  
+
+	PROCESSING:
+		get value from end-user and save the input to the variable myValue
+		send myValue to the module timesTen
+		multiply myValue by 10 and	save the the new value into the variable myNewValue
+		display myNewValue
+
+	OUTPUTS:
+		myNewValue
+  
+
+
+Step 3. Solution Algorithm. Create a solution algorithm. Separate out you pseudocode into methods, the steps inside each
+	method should be sentence style pseudocode based on the defining diagram. Include valid Java variable data types and
+	names that conform to our WITC Software Development Standards.
+
+getUserValue() {
+	declare and initialize int myValue
+
+	declare and instantiate Scanner object
+
+	prompt end-user for an integer
+	set input into the variable myValue
+
+	call timesTen(myValue);
+}
+
+timesTen(int myValue) {
+	declare and initialize int myNewValue
+
+	set myNewValue = 10 * myValue
+
+	call displayResults(myNewValue);
+}
+
+displayResults(int num1) {
+	display "Your number times ten is:" + " " + num1
+}
+
+
+Step 4. Checking the Solution Algorithm. Create a test plan for the algorithm.
+	Remember to fill in the VARIABLES section! That's easy to miss!
+        Have 2-3 test cases that test different inputs and outputs.  
+          
+
+	VARIABLES: 
+
+	TEST CASE 1:
+
+  		INPUT VALUES: 25
+
+  		EXPECTED RESULT: 250
+    
+  		ACTUAL RESULT: 250
+
+	TEST CASE 2:
+
+  		INPUT VALUES: 56
+
+  		EXPECTED RESULT: 560
+    
+  		ACTUAL RESULT: 560
+    
+	TEST CASE 3:
+
+  		INPUT VALUES: 120
+
+  		EXPECTED RESULT: 1200
+    
+  		ACTUAL RESULT: 1200
+
+
+Step 5. Java Code. Using NetBeans, create the Java code based on your algorithm solution. 
+	You will need to follow our WITC Software Development Standards.
+	DO NOT PASTE YOUR CODE HERE. Turn in the project file from NetBeans.
+  	Make sure you comment your code.
+        
+        
+        
+
+Step 6. Test Plan Revisited. Once everything is working, go back and fill in the actual results 
+sections in the test plan. If you did not get your program to run, then your actual results should
+reflect that. Better yet, contact me for help.
+			
