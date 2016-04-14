@@ -1,0 +1,107 @@
+Joleen Schwellenbach
+Assignment 2D
+
+Problem Statement
+        
+A program is required to prompt the end-user for a first name and a last name. 
+The program will create a greeting that starts with "Hi, " followed by the first name, 
+followed by a space, followed by the last name. The application will then display the greeting.      	
+          
+
+Step 1. Nouns and Verbs. Identify the nouns and verbs in the problem statement and list them below
+               
+
+	Nouns: first name, last name, greeting
+
+	Verbs: prompt, create, display
+
+
+
+
+Step 2. Defining Diagram. Convert the relevant nouns into variable names and the relevant verbs into processes.
+          Write down the processes using short statements.
+        
+
+	INPUTS:
+		firstName
+		lastName
+  
+	PROCESSING:
+		prompt for first name and save the input to the variable firstName
+		prompt for last name and save the input to the variable lastName
+		create a greeting that includes lastName and firstName and
+		save the greeting into the variable greeting
+		display greeting
+
+	OUTPUTS:
+		greeting
+  
+
+Step 3. Solution Algorithm. Create a solution algorithm. Separate out you pseudocode into methods, the steps inside each
+	method should be sentence style pseudocode based on the defining diagram. Include valid Java variable data types and
+	names that conform to our WITC Software Development Standards.
+        
+displayGreeting () {
+	declare and initialize firstName
+	declare and initialize lastName
+	declare and initialize greeting
+
+	declare and instantiate Scanner object
+
+	prompt end-user for first name
+	set input into the variable firstName
+
+	prompt end-user for last name
+	set input into the variable lastName
+
+	set greeting = "Hi, " + firstName + " " + lastName
+
+	display greeting
+}
+
+
+
+Step 4. Checking the Solution Algorithm. Create a test plan for the algorithm.
+	Remember to fill in the VARIABLES section! That's easy to miss!
+        Have 2-3 test cases that test different inputs and outputs.  
+          
+
+	VARIABLES: firstName, lastName, greeting
+
+	TEST CASE 1:
+
+  		INPUT VALUES: Joleen, Schwellenbach
+
+  		EXPECTED RESULT: Hi, Joleen Schwellenbach
+    
+  		ACTUAL RESULT: Hi, Joleen Schwellenbach
+
+	TEST CASE 2:
+
+  		INPUT VALUES: Chris, Luse
+
+  		EXPECTED RESULT: Hi, Chris Luse
+    
+  		ACTUAL RESULT: Hi, Chris Luse
+    
+	TEST CASE 3:
+
+  		INPUT VALUES: Kat, Nordby
+
+  		EXPECTED RESULT: Hi, Kat Nordby
+    
+  		ACTUAL RESULT: Hi, Kat Nordby
+
+
+Step 5. Java Code. Using NetBeans, create the Java code based on your algorithm solution. 
+	You will need to follow our WITC Software Development Standards.
+	DO NOT PASTE YOUR CODE HERE. Turn in the project file from NetBeans.
+  	Make sure you comment your code.
+        
+        
+        
+
+Step 6. Test Plan Revisited. Once everything is working, go back and fill in the actual results 
+sections in the test plan. If you did not get your program to run, then your actual results should
+reflect that. Better yet, contact me for help.
+			
