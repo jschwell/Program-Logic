@@ -1,0 +1,197 @@
+Joleen Schwellenbach
+Assignment 7C
+
+Problem Statement
+        
+Write a program that allows the end-user to enter the total precipitation for each month of the year (12 months).
+The program should calculate and display the total precipitation for the year and the average precipitation.
+
+Step 1. Nouns and Verbs. Identify the nouns and verbs in the problem statement and list them below
+               
+
+	Nouns: total precipitation for each month[array], total precipitation for the year, average precipitation
+
+	Verbs: allows, calculate, display
+
+
+
+
+Step 2. Defining Diagram. Convert the relevant nouns into variable names and the relevant verbs into processes.
+          Write down the processes using short statements.
+        
+
+	INPUTS: 
+		i				[to keep track of the iterations]
+		precipitation	[array]
+		input			[Scanner]
+
+
+	PROCESSING:
+		prompt the end-user to enter the total precipitation for each month
+		calculate the total precipitation
+		calculate the average precipitation
+		display the array
+		display the total precipitation
+		display the average precipitation
+
+	OUTPUTS:
+		total
+		average
+		precipitation contents
+
+
+
+Step 3. Solution Algorithm. Create a solution algorithm. Separate out you pseudocode into methods, the steps inside each
+	method should be sentence style pseudocode based on the defining diagram. Include valid Java variable data types and
+	names that conform to our WITC Software Development Standards.
+
+	constructor{
+		declare and initialize double[] precipitation
+		call giveInstructions();
+		set precipitation = getPrecipitation();
+        call calcPrecipitationAvg(precipitation);
+	} //end of constructor
+
+	method giveInstructions(){
+		display "This program will allow you to enter the precipitation in inches for each month."
+	} //end of method	
+
+	function String getUserInput(String message){
+		declare and initialize String userInput
+		
+		declare and instantiate Scanner object named input
+
+		prompt end-user with message
+		use input to get the end-user entry and
+		set userInput equal to end-user entry
+
+		return userInput;
+	} //end of method
+
+	function double[] getPrecipitation(){
+		declare final int SIZE = 12
+		declare and initialize int i
+		declare double[] precipitation = new double[SIZE]
+		declare and initialize String userInput
+		declare and initialize String message
+		declare and initialize String month
+  
+		while(i is less than SIZE)
+			set month = checkMonth(i)
+			set message = "Please enter the precipitation for " + month
+			set userInput = getUserInput(message)
+
+  			if(userInput matches a number format){
+				set precipiation[i] = stringToReal(userInput)
+				increment i
+			}
+		} //end of while loop
+  
+		return precipitation;
+  
+	} //end of method
+
+	method calcPrecipitationAvg(pass in array){
+		declare and initialize double total
+		declare and initialize double average
+
+		for(int i = 0; i < array.length; increment i){
+			set total = total + array[i]
+		} //end of for loop
+
+		set average = total divided by array.length
+
+		call displayPrecipitation(array, total, average)
+
+	} //end of method
+
+	method displayPrecipitation(pass in array, pass in total, pass in average){
+		declare and initialize String month
+
+		for(int i = 0; i < array.length; increment i){
+			set month = checkMonth(i)
+			display month + " - " + array[i] + " inches"
+		} //end of for loop
+
+		display "The total amount of precipitation for the year was: " + total
+		display "The average amount of precipitation for the year was: " + average
+
+	} //end of method
+
+	function String checkMonth(int number){
+		declare and initialize String month
+
+		CASE OF number
+			0: month = "January"
+			1: month = "February"
+			2: month = "March"
+			3: month = "April"
+			4: month = "May"
+			5: month = "June"
+			6: month = "July"
+			7: month = "August"
+			8: month = "September"
+			9: month = "October"
+			10: month = "November"
+			11: month = "December"
+		ENDCASE
+
+		return month;
+	}
+
+Step 4. Checking the Solution Algorithm. Create a test plan for the algorithm.
+	Remember to fill in the VARIABLES section! That's easy to miss!
+        Have 2-3 test cases that test different inputs and outputs.  
+          
+
+	VARIABLES: userInput, total, average
+
+	TEST CASE 1:
+
+  		INPUT VALUES: 10 for all
+
+  		EXPECTED RESULT: 
+			total = 120
+			average = 10			
+
+    
+  		ACTUAL RESULT:
+			The total amount of precipitation for the year was: 120.00 inches
+			The average amount of precipitation for the year was: 10.00 inches
+
+	TEST CASE 2:
+
+  		INPUT VALUES: A for the first month(January)
+
+  		EXPECTED RESULT: 
+			The loop counter will not increment and ask for January's precipitation again because it's not a number.
+    
+  		ACTUAL RESULT:
+			Please enter the precipitation for January.
+			(The loop counter will not increment and ask for January's precipitation again because it's not a number.)
+
+	TEST CASE 3:
+
+  		INPUT VALUES: 2.5, 3, 4, 12.6, 8, 4.2, 0, 5.4, 7.3, 6, 4.1, 2
+
+  		EXPECTED RESULT: 
+			total = 59.1
+			average = 4.925
+    
+  		ACTUAL RESULT:
+			The total amount of precipitation for the year was: 59.10 inches
+			The average amount of precipitation for the year was: 4.93 inches
+
+
+Step 5. Java Code. Using NetBeans, create the Java code based on your algorithm solution. 
+	You will need to follow our WITC Software Development Standards.
+	DO NOT PASTE YOUR CODE HERE. Turn in the project file from NetBeans.
+  	Make sure you comment your code.
+        
+        
+        
+
+Step 6. Test Plan Revisited. Once everything is working, go back and fill in the actual results 
+sections in the test plan. If you did not get your program to run, then your actual results should
+reflect that. Better yet, contact me for help.
+			

@@ -1,0 +1,178 @@
+Joleen Schwellenbach
+Assignment 7B (2-D)
+
+Problem Statement
+        
+Write a program that asks the end-user how many students do they have and how many test scores do they need to record (Hint: make that two separate statement).
+The number of students is the number of rows in your two-dimensional array. The number of tests (+1) is the number of columns in your two-dimensional array.
+Send your two-dimensional array to a method that will display its contents.        
+
+Step 1. Nouns and Verbs. Identify the nouns and verbs in the problem statement and list them below
+               
+
+	Nouns: number of students, number of test scores, array
+
+	Verbs: ask (3), send, display
+
+
+
+
+Step 2. Defining Diagram. Convert the relevant nouns into variable names and the relevant verbs into processes.
+          Write down the processes using short statements.
+        
+
+	INPUTS: 
+		row						[to keep track of the row iterations]
+		col						[to keep track of the column iterations]
+		numberOfStudents		[number of rows]
+		numberOfTests (+1)		[number of columns]
+		grades					[array]
+		input					[Scanner]
+
+	PROCESSING:
+		prompt end-user for number of students
+		prompt end-user for number of test scores
+		prompt end-user to enter student name followed by test scores
+		send array to method
+		and display array contents
+
+
+	OUTPUTS:
+		grades contents
+
+
+Step 3. Solution Algorithm. Create a solution algorithm. Separate out you pseudocode into methods, the steps inside each
+	method should be sentence style pseudocode based on the defining diagram. Include valid Java variable data types and
+	names that conform to our WITC Software Development Standards.
+
+	constructor{
+		call giveInstructions();
+        call recordGrades();
+	} //end of constructor
+
+	method giveInstructions(){
+		display "This program will allow you to enter in your students' names and their grades."
+	} //end of method	
+
+	function String getUserInput(String message){
+		declare and initialize String userInput
+		
+		declare and instantiate Scanner object named input
+
+		prompt end-user with message
+		use input to get the end-user entry and
+		set userInput equal to end-user entry
+
+		return userInput;
+	} //end of method
+
+	method int checkForInteger(String userInput){
+        declare and initialize message
+        
+		//ask end-user for an integer if they did not enter an integer
+        while(userInput is not a positive integer)){
+            set message = "Please enter a positive integer."
+            set userInput = getUserInput(message)
+        } //end of while loop
+        
+        return stringToInteger(userInput)
+    } //end of method
+
+	method recordGrades(){
+		declare and initialize int numberOfStudents
+		declare and initialize int numberOfTests
+		declare and initialize String[] grades
+		declare and initialize String userInput
+		declare and initialize String message
+  
+	    set message = "How many students do you have?"
+		set userInput = getUserInput(message)
+		set numberOfStudents = checkForInteger(userInput)
+
+		set message = "How many test scores do you need to record?"
+		set userInput = getUserInput(message)
+		set numberOfTests = checkForInteger(userInput)
+		set numberOfTests = numberOfTests + 1
+
+		set grades = new String[numberOfStudents][numberOfTests]
+  
+		for(int row = 0; row < numberOfStudents; increment row){
+			set message = "Please enter the student's name."
+			set grades[row][0] = getUserInput(message)
+
+			for(int col = 1; col < numberOfTests; increment col){
+				set message = "Please enter grade for test " + col
+				set grades[row][col] = getUserInput(message)
+			} //end of inner for loop
+		} //end of outer for loop
+  
+		call displayGrades(grades);
+  
+	} //end of method
+
+	method displayGrades(pass in array){
+		for(int row = 0; row < grades.length; increment row){
+			for(int col = 0; col < grades[row].length; increment col){
+				display grades[row][col]
+			} // end of inner for loop
+		} // end of outer for loop
+
+	} //end of method
+
+Step 4. Checking the Solution Algorithm. Create a test plan for the algorithm.
+	Remember to fill in the VARIABLES section! That's easy to miss!
+        Have 2-3 test cases that test different inputs and outputs.  
+          
+
+	VARIABLES: numberOfStudents, numberOfTests, userInput
+
+	TEST CASE 1:
+
+  		INPUT VALUES: 2, 2, Joleen, A, B, Chris, C, B
+
+  		EXPECTED RESULT: 
+			Joleen	A	B
+			Chris	C	B
+
+			(The recordGrades loop will run. The array sizes are integers so the checkForInteger() loop will not run.
+			 The value of userInput is saved into the array and the array will be displayed back to end-user.) 
+						  	
+  		ACTUAL RESULT:
+			Joleen	A	B	
+			Chris	C	B	
+
+
+	TEST CASE 2:
+
+  		INPUT VALUES: numberOfStudents = 2.5
+
+  		EXPECTED RESULT: 
+			The checkForInteger() loop will run and tell the end-user to enter in a positive integer.
+
+    
+  		ACTUAL RESULT:
+			Please enter a positive integer.
+
+
+	TEST CASE 3:
+
+  		INPUT VALUES: numberOfTests = A
+
+  		EXPECTED RESULT: 
+			The checkForInteger() loop will run and tell the end-user to enter in a positive integer.
+    
+  		ACTUAL RESULT:
+			Please enter a positive integer.
+
+Step 5. Java Code. Using NetBeans, create the Java code based on your algorithm solution. 
+	You will need to follow our WITC Software Development Standards.
+	DO NOT PASTE YOUR CODE HERE. Turn in the project file from NetBeans.
+  	Make sure you comment your code.
+        
+        
+        
+
+Step 6. Test Plan Revisited. Once everything is working, go back and fill in the actual results 
+sections in the test plan. If you did not get your program to run, then your actual results should
+reflect that. Better yet, contact me for help.
+			

@@ -1,0 +1,195 @@
+Joleen Schwellenbach
+Assignment 7B (1-D)
+
+Problem Statement
+        
+Write a program that uses a while loop and an array. Ask the end-user how many words do they want to enter.
+The end-user's response will become the SIZE of your array. The iterations of your loop should be controlled by a sentinel.
+Inside the loop, the program asks an end-user to enter the words. Use a for loop to display the input back to them. 
+Display the words so you get a "sentence". When the loop has completed, thank the user for participating.          
+
+Step 1. Nouns and Verbs. Identify the nouns and verbs in the problem statement and list them below
+               
+
+	Nouns: number of words/SIZE, array, words, [message]
+
+	Verbs: ask (2), display (2), thank[display]
+
+
+
+
+Step 2. Defining Diagram. Convert the relevant nouns into variable names and the relevant verbs into processes.
+          Write down the processes using short statements.
+        
+
+	INPUTS: 
+		i				[to keep track of the iterations]
+		numberOfWords	[size of array]
+		sentence		[array]
+		input			[Scanner]
+
+	PROCESSING:
+		prompt the end-user for the number of words that they want to enter
+		save user input into the variable numberOfWords
+		prompt the end-user to enter words
+		save user input into an array
+		display the contents of the array
+		display thank you message
+
+
+	OUTPUTS:
+		sentence contents
+		message
+		
+
+Step 3. Solution Algorithm. Create a solution algorithm. Separate out you pseudocode into methods, the steps inside each
+	method should be sentence style pseudocode based on the defining diagram. Include valid Java variable data types and
+	names that conform to our WITC Software Development Standards.
+
+	constructor{
+		call giveInstructions();
+        call getSentence();
+	} //end of constructor
+
+	method giveInstructions(){
+		display "This program will allow you to enter in as many words as you would like. You can quit entering words by entering a Q."
+	} //end of method	
+
+	function String getUserInput(String message){
+		declare and initialize String userInput
+		
+		declare and instantiate Scanner object named input
+
+		prompt end-user with message
+		use input to get the end-user entry and
+		set userInput equal to end-user entry
+
+		return userInput;
+	} //end of method
+
+	method getSentence(){
+		declare final String QUIT = "Q"
+		declare and initialize int i
+		declare and initialize int numberOfWords
+		declare and initialize String[] sentence
+		declare and initialize String userInput
+		declare and initialize String message
+  
+	    set message = "How many words do you want to enter?"
+		set userInput = getUserInput(message)
+		set numberOfWords = checkForInteger(userInput)
+
+		set sentence = new String[numberOfWords]
+
+		set message = "Please enter a word or Q to quit."
+		set userInput = getUserInput(message)
+  
+		while (userInput is not the same as QUIT AND i is less than numberOfWords){
+			set sentence[i] = userInput
+			increment i
+			if(is is less than numberOfWords){
+				set message = "Please enter a word or Q to quit."
+				set userInput = getUserInput(message)
+			}
+		} //end of while loop
+  
+		call displaySentence(sentence, i);
+  
+	} //end of method
+
+	method displaySentence(pass in array, pass in the numberOfEntries){
+		if(numberOfEntries is greater than zero){
+			display "You entered: "
+
+			for(int i = 0; i < numberOfEntries; increment i){
+				display " " + array[i]
+			} //end of for loop
+
+			display "."
+		}
+		else{
+			display "Perhaps you will have time later to enter data."
+		}
+  
+		display "Thanks for participating!"
+
+	} //end of method
+
+	method int checkForInteger(String userInput){
+        declare and initialize message
+        
+		//ask end-user for an integer if they did not enter an integer
+        while(userInput is not a positive integer)){
+            set message = "Please enter a positive integer."
+            set userInput = getUserInput(message)
+        } //end of while loop
+        
+        return stringToInteger(userInput)
+    } //end of method
+
+Step 4. Checking the Solution Algorithm. Create a test plan for the algorithm.
+	Remember to fill in the VARIABLES section! That's easy to miss!
+        Have 2-3 test cases that test different inputs and outputs.  
+          
+
+	VARIABLES: numberOfWords, userInput
+
+	TEST CASE 1:
+
+  		INPUT VALUES: 10, Hi, Q
+
+  		EXPECTED RESULT: 
+			You entered: Hi.
+			Thanks for participating!
+
+			(The loop will run once and the first word entered will be saved into the array and displayed.)
+    
+
+  		ACTUAL RESULT: 
+			You entered: Hi.
+			Thanks for participating!
+						
+
+	TEST CASE 2: 
+
+  		INPUT VALUES: 5, Q
+
+  		EXPECTED RESULT: 
+			Perhaps you will have time later to enter data.
+			Thanks for participating!
+
+			(The loop will not run and displaySentence() will be called. The else message in displaySentence() will be displayed.)
+
+    
+  		ACTUAL RESULT: 
+			Perhaps you will have time later to enter data.
+			Thanks for participating!
+
+
+	TEST CASE 3: 
+
+  		INPUT VALUES: 5, Hi, my, name, is, Joleen
+
+  		EXPECTED RESULT: 
+			You entered: Hi my name is Joleen.
+			Thanks for participating!
+
+			(The loop will run for the full 5 iterations. All words will be saved into the array and displayed.)
+    
+  		ACTUAL RESULT: 
+			You entered: Hi my name is Joleen.
+			Thanks for participating!
+
+
+Step 5. Java Code. Using NetBeans, create the Java code based on your algorithm solution. 
+	You will need to follow our WITC Software Development Standards.
+	DO NOT PASTE YOUR CODE HERE. Turn in the project file from NetBeans.
+  	Make sure you comment your code.
+        
+        
+        
+
+Step 6. Test Plan Revisited. Once everything is working, go back and fill in the actual results 
+sections in the test plan. If you did not get your program to run, then your actual results should
+reflect that. Better yet, contact me for help.
+			
