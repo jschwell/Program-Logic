@@ -1,0 +1,135 @@
+Joleen Schwellenbach
+Assignment 6D
+
+Problem Statement
+        
+Write a program that asks the end-user to enter an even number. If the number is not even, 
+ask the end-user for an even number until an even number is entered. If the number is even,
+display a message thanking the user for entering an even number. 
+          
+
+Step 1. Nouns and Verbs. Identify the nouns and verbs in the problem statement and list them below
+               
+
+	Nouns: even number, message
+
+	Verbs: asks (2), display
+
+
+
+
+Step 2. Defining Diagram. Convert the relevant nouns into variable names and the relevant verbs into processes.
+          Write down the processes using short statements.
+        
+
+	INPUTS: 
+		entry
+  
+
+	PROCESSING:
+		prompt the user for an even number
+		prompt the user again for an even number if not an even number
+		display a message if an even number
+
+
+	OUTPUTS:
+		message
+
+
+Step 3. Solution Algorithm. Create a solution algorithm. Separate out you pseudocode into methods, the steps inside each
+	method should be sentence style pseudocode based on the defining diagram. Include valid Java variable data types and
+	names that conform to our WITC Software Development Standards.
+        
+		getUserNumber(){  //Renamed so it doesn't interfer with my getUserInput() method
+			declare and initialize int entry
+			declare and initialize boolean isEven
+
+			declare and instantiate Scanner object
+
+			display "This program only accepts even numbers"
+
+			prompt end-user to enter an even number and
+			set input into the variable entry
+
+			IF(isEven){
+				display "Thanks for entering an even number"
+			ELSE
+				clear the scanner
+			}
+		}
+		
+		boolean getEvensOnly(int entry){
+			declare and initialize boolean isEven
+
+			WHILE(checkForEven(entry) is not true){
+				set isEven = false
+				call getUserInput();
+			}
+
+			return isEven;
+		}
+
+		boolean checkForEven(int entry){
+			declare and initialize boolean isEven
+
+			IF(entry % 2 is equal to 0){
+				set isEven = true
+			}
+
+			return isEven;
+		}
+
+
+Step 4. Checking the Solution Algorithm. Create a test plan for the algorithm.
+	Remember to fill in the VARIABLES section! That's easy to miss!
+        Have 2-3 test cases that test different inputs and outputs.  
+          
+
+	VARIABLES: entry, message
+
+	TEST CASE 1:
+
+  		INPUT VALUES: 50
+
+  		EXPECTED RESULT: "Thanks for entering an even number" 
+    
+  		ACTUAL RESULT: "Thanks for entering an even number"
+
+	TEST CASE 2:
+
+  		INPUT VALUES: 25, 21, 22
+
+  		EXPECTED RESULT: 
+			"This program only accepts even numbers. Please enter an even number"
+			"This program only accepts even numbers. Please enter an even number"
+			"Thanks for entering an even number"
+    
+  		ACTUAL RESULT: 
+			"This program only accepts even numbers
+			Please enter an even number"
+			"This program only accepts even numbers
+			Please enter an even number"
+			"Thanks for entering an even number"
+
+    
+	TEST CASE 3:
+
+  		INPUT VALUES: abc
+
+  		EXPECTED RESULT: exception error (not a number)
+    
+  		ACTUAL RESULT: exception error
+
+
+Step 5. Java Code. Using NetBeans, create the Java code based on your algorithm solution. 
+	You will need to follow our WITC Software Development Standards.
+	DO NOT PASTE YOUR CODE HERE. Turn in the project file from NetBeans.
+  	Make sure you comment your code.
+        
+        
+        
+
+Step 6. Test Plan Revisited. Once everything is working, go back and fill in the actual results 
+sections in the test plan. If you did not get your program to run, then your actual results should
+reflect that. Better yet, contact me for help.
+			

@@ -1,0 +1,157 @@
+Joleen Schwellenbach
+Assignment 6C
+
+Problem Statement
+        
+Write a program that asks the end-user to enter a number. Use zero as a "sentinel" value. 
+In other words, compare the number to zero. If the number entered by the end-user is not equal to zero,
+then keep going. Ask the end-user to enter another number, add it to the original number, 
+and store the result as a total. As long as the number entered by the end-user is not 0, 
+continue asking the end-user to enter another number, and add it to the total. 
+Once the end-user enters a zero then it's time to end the loop and display the sign off message "Good bye!" 
+As you progress through the loop, display each of the numbers entered by the end-user. 
+After the loop display the cumulative total.    	
+          
+
+Step 1. Nouns and Verbs. Identify the nouns and verbs in the problem statement and list them below
+               
+
+	Nouns: number, zero, total, message
+
+	Verbs: asks (2), compare, add, store, display (3)
+
+
+
+
+Step 2. Defining Diagram. Convert the relevant nouns into variable names and the relevant verbs into processes.
+          Write down the processes using short statements.
+        
+
+	INPUTS: 
+		number
+  
+
+	PROCESSING:
+		prompt the end user for a number
+		compare number to zero
+		if not equal to zero:
+			prompt the end user for another number in a loop
+			display number
+			add number to previous number and
+			set equal to total
+		if equal to zero: end loop
+		display total after loop
+		display good bye message
+
+	OUTPUTS:
+		number
+		message
+		total
+
+
+Step 3. Solution Algorithm. Create a solution algorithm. Separate out you pseudocode into methods, the steps inside each
+	method should be sentence style pseudocode based on the defining diagram. Include valid Java variable data types and
+	names that conform to our WITC Software Development Standards.
+        
+		calcSum(){
+			declare and initialize double number
+			declare and initialize double total
+			declare and initialize String message
+
+			set message = "Please enter a number. When you want to quit, just enter the number zero."
+			set number = stringToReal(getUserInput(message))
+
+			call displayResults(number);
+
+			while(number is not equal to 0){
+				add number to total
+
+				set message = "Please enter another number or zero to quit."
+				set number = stringToReal(getUserInput(message))
+
+				set message = "Number entered: " + number
+				call displayResults(message);
+			}
+			set message = "Total of all numbers entered: " + total + "\nGood bye!"
+			call displayResults(message);
+		}
+		
+		String getUserInput(String message){
+			declare and initialize String userInput
+
+			declare and instantiate Scanner object
+
+			prompt end-user with message and
+			set input into the variable userInput
+
+			return userInput;
+		}
+
+		displayResults(String message){
+			display message
+		}
+
+
+Step 4. Checking the Solution Algorithm. Create a test plan for the algorithm.
+	Remember to fill in the VARIABLES section! That's easy to miss!
+        Have 2-3 test cases that test different inputs and outputs.  
+          
+
+	VARIABLES: number, total, message
+
+	TEST CASE 1:
+
+  		INPUT VALUES: -1, 50, 21.5, 0
+
+  		EXPECTED RESULT: 
+			Number entered: -1
+			Number entered: 50
+			Number entered: 21.5
+			Number entered: 0
+			Total of all numbers entered: 70.5
+			Good bye!
+    
+  		ACTUAL RESULT:
+			Number entered: -1.0
+			Number entered: 50.0
+			Number entered: 21.5
+			Number entered: 0.0
+
+			Total of all numbers entered: 70.5
+			Good bye!
+
+	TEST CASE 2:
+
+  		INPUT VALUES: abc
+
+  		EXPECTED RESULT: exception error (not a double)
+    
+  		ACTUAL RESULT: exception error
+    
+	TEST CASE 3:
+
+  		INPUT VALUES: 0
+
+  		EXPECTED RESULT: 
+			Number entered: 0
+			Total of all numbers entered: 0
+			Good bye!
+    
+  		ACTUAL RESULT:
+			Number entered: 0.0
+
+			Total of all numbers entered: 0.0
+			Good bye!
+
+Step 5. Java Code. Using NetBeans, create the Java code based on your algorithm solution. 
+	You will need to follow our WITC Software Development Standards.
+	DO NOT PASTE YOUR CODE HERE. Turn in the project file from NetBeans.
+  	Make sure you comment your code.
+        
+        
+        
+
+Step 6. Test Plan Revisited. Once everything is working, go back and fill in the actual results 
+sections in the test plan. If you did not get your program to run, then your actual results should
+reflect that. Better yet, contact me for help.
+			

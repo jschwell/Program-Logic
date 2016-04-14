@@ -1,0 +1,193 @@
+Joleen Schwellenbach
+Assignment 6B
+
+Problem Statement
+        
+Write a program that uses a for loop. Inside the loop, 
+the program asks an end-user to enter something, displaying their input back to them each time. 
+When the loop has completed five times, thank the user for participating.     	
+          
+
+Step 1. Nouns and Verbs. Identify the nouns and verbs in the problem statement and list them below
+               
+
+	Nouns: 5 inputs, [message]
+
+	Verbs: asks, display, thank[display]
+
+
+
+
+Step 2. Defining Diagram. Convert the relevant nouns into variable names and the relevant verbs into processes.
+          Write down the processes using short statements.
+        
+
+	INPUTS: 
+		userInput (five times)
+  
+
+	PROCESSING:
+		prompt the end user for input five times in a loop 
+		display the user input in the same loop
+		display message outside of the loop
+  
+
+	OUTPUTS:
+		userInput
+		message
+
+
+Step 3. Solution Algorithm. Create a solution algorithm. Separate out you pseudocode into methods, the steps inside each
+	method should be sentence style pseudocode based on the defining diagram. Include valid Java variable data types and
+	names that conform to our WITC Software Development Standards.
+
+	FOR LOOP:  
+		getSomethingFor(){
+			declare and initialize String userInput
+			declare and initialize String message
+
+			for (int i = 0; i < 5; i++){
+				set message = "Please enter something."
+				set userInput = getUserInput(message)
+				set message = "You entered: " + userInput
+				call displayResults(message);
+			}
+
+			set message = "Thanks for participating!"
+			call displayResults(message);
+		}
+
+		String getUserInput(String message){
+			declare and initialize String userInput
+
+			declare and instantiate Scanner object
+
+			prompt end-user with message and
+			set input into the variable userInput
+
+			return userInput;
+		}
+
+		displayResults(String message){
+			display message
+		}
+
+	WHILE LOOP: 
+		getSomethingWhile(){
+			declare and initialize String userInput
+			declare and initialize String message
+			declare and initialize int counter
+
+			while (counter < 5){
+				set message = "Please enter something."
+				set userInput = getUserInput(message)
+				set message = "You entered: " + userInput
+				call displayResults(message);
+
+				add one to count
+			}
+
+			set message = "Thanks for participating!"
+			call displayResults(message);
+		}
+
+		String getUserInput(String message){
+			declare and initialize String userInput
+
+			declare and instantiate Scanner object
+
+			prompt end-user with message and
+			set input into the variable userInput
+
+			return userInput;
+		}
+
+		displayResults(String message){
+			display message
+		}
+
+Step 4. Checking the Solution Algorithm. Create a test plan for the algorithm.
+	Remember to fill in the VARIABLES section! That's easy to miss!
+        Have 2-3 test cases that test different inputs and outputs.  
+          
+
+	VARIABLES: userInput (5), message
+
+	TEST CASE 1:
+
+  		INPUT VALUES: 1, 2, 3, 4, 5
+
+  		EXPECTED RESULT: 
+			You entered: 1
+			You entered: 2
+			You entered: 3
+			You entered: 4
+			You entered: 5
+
+			Thanks for participating!
+    
+  		ACTUAL RESULT:
+			You entered: 1
+			You entered: 2
+			You entered: 3
+			You entered: 4
+			You entered: 5
+
+			Thanks for participating!
+
+	TEST CASE 2:
+
+  		INPUT VALUES: Hello, my, name, is, Joleen.
+
+  		EXPECTED RESULT: 
+			You entered: Hello
+			You entered: my
+			You entered: name
+			You entered: is
+			You entered: Joleen.
+
+			Thanks for participating!
+    
+  		ACTUAL RESULT:
+			You entered: Hello
+			You entered: my
+			You entered: name
+			You entered: is
+			You entered: Joleen.
+
+			Thanks for participating!
+
+	TEST CASE 3:
+
+  		INPUT VALUES: 7, is, my, favorite, number.
+
+  		EXPECTED RESULT: 
+			You entered: 7
+			You entered: is
+			You entered: my
+			You entered: favorite
+			You entered: number.
+
+			Thanks for participating!
+    
+  		ACTUAL RESULT:
+			You entered: 7
+			You entered: is
+			You entered: my
+			You entered: favorite
+			You entered: number.
+
+			Thanks for participating!
+
+Step 5. Java Code. Using NetBeans, create the Java code based on your algorithm solution. 
+	You will need to follow our WITC Software Development Standards.
+	DO NOT PASTE YOUR CODE HERE. Turn in the project file from NetBeans.
+  	Make sure you comment your code.
+        
+        
+        
+
+Step 6. Test Plan Revisited. Once everything is working, go back and fill in the actual results 
+sections in the test plan. If you did not get your program to run, then your actual results should
+reflect that. Better yet, contact me for help.
+			
